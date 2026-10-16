@@ -1,0 +1,57 @@
+bloco,grupo,rodada,opcao,pct,fonte
+estimulada,Total,2026-10-15,Flávio Bolsonaro,47,https://www.brasildefato.com.br/2026/10/15/datafolha-aponta-empate-tecnico-no-2o-turno-flavio-bolsonaro-47-lula-45/
+estimulada,Total,2026-10-15,Lula,45,https://www.brasildefato.com.br/2026/10/15/datafolha-aponta-empate-tecnico-no-2o-turno-flavio-bolsonaro-47-lula-45/
+estimulada,Total,2026-10-15,"Branco, nulo ou nenhum",6,https://www.brasildefato.com.br/2026/10/15/datafolha-aponta-empate-tecnico-no-2o-turno-flavio-bolsonaro-47-lula-45/
+estimulada,Total,2026-10-15,Não sabe,2,https://www.brasildefato.com.br/2026/10/15/datafolha-aponta-empate-tecnico-no-2o-turno-flavio-bolsonaro-47-lula-45/
+estimulada,Total,2026-10-08,Flávio Bolsonaro,49,https://www.brasildefato.com.br/2026/10/08/datafolha-segundo-turno-flavio-bolsonaro-49-lula-45/
+estimulada,Total,2026-10-08,Lula,45,https://www.brasildefato.com.br/2026/10/08/datafolha-segundo-turno-flavio-bolsonaro-49-lula-45/
+estimulada,Total,2026-10-08,"Branco, nulo ou nenhum",5,https://www.brasildefato.com.br/2026/10/08/datafolha-segundo-turno-flavio-bolsonaro-49-lula-45/
+estimulada,Total,2026-10-08,Não sabe,1,https://www.brasildefato.com.br/2026/10/08/datafolha-segundo-turno-flavio-bolsonaro-49-lula-45/
+rejeicao,Total,2026-10-15,Lula,46,https://www.cnnbrasil.com.br/eleicoes/datafolha-46-dos-eleitores-rejeitam-lula-e-44-flavio-bolsonaro/
+rejeicao,Total,2026-10-15,Flávio Bolsonaro,44,https://www.cnnbrasil.com.br/eleicoes/datafolha-46-dos-eleitores-rejeitam-lula-e-44-flavio-bolsonaro/
+rejeicao,Total,2026-10-15,Rejeita os dois,3,https://www.cnnbrasil.com.br/eleicoes/datafolha-46-dos-eleitores-rejeitam-lula-e-44-flavio-bolsonaro/
+rejeicao,Total,2026-10-15,Não rejeita nenhum,7,https://www.cnnbrasil.com.br/eleicoes/datafolha-46-dos-eleitores-rejeitam-lula-e-44-flavio-bolsonaro/
+rejeicao,Total,2026-10-08,Lula,46,https://www.brasildefato.com.br/2026/10/08/datafolha-segundo-turno-flavio-bolsonaro-49-lula-45/
+rejeicao,Total,2026-10-08,Flávio Bolsonaro,43,https://www.brasildefato.com.br/2026/10/08/datafolha-segundo-turno-flavio-bolsonaro-49-lula-45/
+certeza,Total,2026-10-08,Totalmente decidido,94,https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-tem-52-dos-votos-validos-lula-48/
+certeza,Total,2026-10-08,Ainda pode mudar,6,https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-tem-52-dos-votos-validos-lula-48/
+avaliacao,Total,2026-10-08,Negativa,40,https://www.brasildefato.com.br/2026/10/08/datafolha-segundo-turno-flavio-bolsonaro-49-lula-45/
+avaliacao,Total,2026-10-08,Positiva,35,https://www.brasildefato.com.br/2026/10/08/datafolha-segundo-turno-flavio-bolsonaro-49-lula-45/
+migracao,"Eleitores de Cury, Renan Santos, Caiado e Zema no 1º turno",2026-10-08,Flávio Bolsonaro,46,https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-tem-52-dos-votos-validos-lula-48/
+migracao,"Eleitores de Cury, Renan Santos, Caiado e Zema no 1º turno",2026-10-08,Lula,32,https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-tem-52-dos-votos-validos-lula-48/
+migracao,"Eleitores de Cury, Renan Santos, Caiado e Zema no 1º turno",2026-10-08,Branco ou nulo,15,https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-tem-52-dos-votos-validos-lula-48/
+expectativa,Total,2026-10-15,Acha que Flávio vence,54,https://www.spagora.com.br/politica/eleicoes/datafolha-flavio-lula-empate-segundo-turno/
+sexo,Mulheres,2026-10-15,Flávio Bolsonaro,40,https://jornalggn.com.br/eleicoes/datafolha-flavio-51-lula-49-votos-validos/
+sexo,Mulheres,2026-10-15,Lula,49,https://jornalggn.com.br/eleicoes/datafolha-flavio-51-lula-49-votos-validos/
+sexo,Homens,2026-10-15,Flávio Bolsonaro,52,https://jornalggn.com.br/eleicoes/datafolha-flavio-51-lula-49-votos-validos/
+sexo,Homens,2026-10-15,Lula,40,https://jornalggn.com.br/eleicoes/datafolha-flavio-51-lula-49-votos-validos/
+idade,16 a 24 anos,2026-10-15,Flávio Bolsonaro,43,https://www.brasil247.com/brasil/lula-vira-placar-e-supera-flavio-bolsonaro-entre-jovens-diz-datafolha/
+idade,16 a 24 anos,2026-10-15,Lula,50,https://www.brasil247.com/brasil/lula-vira-placar-e-supera-flavio-bolsonaro-entre-jovens-diz-datafolha/
+escolaridade,Ensino fundamental,2026-10-15,Flávio Bolsonaro,36,https://jornalggn.com.br/eleicoes/datafolha-flavio-51-lula-49-votos-validos/
+escolaridade,Ensino fundamental,2026-10-15,Lula,56,https://jornalggn.com.br/eleicoes/datafolha-flavio-51-lula-49-votos-validos/
+renda,Até 2 salários mínimos,2026-10-15,Flávio Bolsonaro,38,https://jornalggn.com.br/eleicoes/datafolha-flavio-51-lula-49-votos-validos/
+renda,Até 2 salários mínimos,2026-10-15,Lula,53,https://jornalggn.com.br/eleicoes/datafolha-flavio-51-lula-49-votos-validos/
+renda,2 a 5 salários mínimos,2026-10-15,Flávio Bolsonaro,55,https://jornalggn.com.br/eleicoes/datafolha-flavio-51-lula-49-votos-validos/
+renda,2 a 5 salários mínimos,2026-10-15,Lula,40,https://jornalggn.com.br/eleicoes/datafolha-flavio-51-lula-49-votos-validos/
+regiao,Sudeste,2026-10-15,Flávio Bolsonaro,51,https://jornalggn.com.br/eleicoes/datafolha-flavio-51-lula-49-votos-validos/
+regiao,Sudeste,2026-10-15,Lula,41,https://jornalggn.com.br/eleicoes/datafolha-flavio-51-lula-49-votos-validos/
+regiao,Sul,2026-10-15,Flávio Bolsonaro,57,https://jornalggn.com.br/eleicoes/datafolha-flavio-51-lula-49-votos-validos/
+regiao,Sul,2026-10-15,Lula,35,https://jornalggn.com.br/eleicoes/datafolha-flavio-51-lula-49-votos-validos/
+regiao,Nordeste,2026-10-15,Flávio Bolsonaro,32,https://jornalggn.com.br/eleicoes/datafolha-flavio-51-lula-49-votos-validos/
+regiao,Nordeste,2026-10-15,Lula,61,https://jornalggn.com.br/eleicoes/datafolha-flavio-51-lula-49-votos-validos/
+religiao,Evangélicos,2026-10-15,Flávio Bolsonaro,62,https://jornalggn.com.br/eleicoes/datafolha-flavio-51-lula-49-votos-validos/
+religiao,Evangélicos,2026-10-15,Lula,29,https://jornalggn.com.br/eleicoes/datafolha-flavio-51-lula-49-votos-validos/
+religiao,Católicos,2026-10-15,Flávio Bolsonaro,42,https://jornalggn.com.br/eleicoes/datafolha-flavio-51-lula-49-votos-validos/
+religiao,Católicos,2026-10-15,Lula,52,https://jornalggn.com.br/eleicoes/datafolha-flavio-51-lula-49-votos-validos/
+escolaridade,Ensino fundamental,2026-10-08,Flávio Bolsonaro,41,https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-tem-52-dos-votos-validos-lula-48/
+escolaridade,Ensino fundamental,2026-10-08,Lula,55,https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-tem-52-dos-votos-validos-lula-48/
+renda,Até 2 salários mínimos,2026-10-08,Flávio Bolsonaro,41,https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-tem-52-dos-votos-validos-lula-48/
+renda,Até 2 salários mínimos,2026-10-08,Lula,52,https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-tem-52-dos-votos-validos-lula-48/
+regiao,Sul,2026-10-08,Flávio Bolsonaro,58,https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-tem-52-dos-votos-validos-lula-48/
+regiao,Sul,2026-10-08,Lula,35,https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-tem-52-dos-votos-validos-lula-48/
+regiao,Nordeste,2026-10-08,Flávio Bolsonaro,35,https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-tem-52-dos-votos-validos-lula-48/
+regiao,Nordeste,2026-10-08,Lula,61,https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-tem-52-dos-votos-validos-lula-48/
+religiao,Evangélicos,2026-10-08,Flávio Bolsonaro,69,https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-tem-52-dos-votos-validos-lula-48/
+religiao,Evangélicos,2026-10-08,Lula,25,https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-tem-52-dos-votos-validos-lula-48/
+religiao,Católicos,2026-10-08,Flávio Bolsonaro,41,https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-tem-52-dos-votos-validos-lula-48/
+religiao,Católicos,2026-10-08,Lula,53,https://www.cnnbrasil.com.br/eleicoes/datafolha-flavio-tem-52-dos-votos-validos-lula-48/
