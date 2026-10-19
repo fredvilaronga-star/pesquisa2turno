@@ -1,4 +1,4 @@
-name: Atualizar pesquisas
+name:name: Atualizar pesquisas
 
 on:
   schedule:
@@ -53,12 +53,13 @@ jobs:
                a) Agregadores, primeiro. Abra com WebFetch a matéria mais recente do Poder360 que resume as pesquisas do 2º turno (busque "Poder360 como estão Lula e Flávio nas pesquisas") e a mais recente de calendário ("quando saem as próximas pesquisas Lula Flávio", Times Brasil ou similar). Use as duas como lista de conferência: toda rodada citada ali precisa estar no CSV.
                b) Por instituto (WebSearch "<instituto> 2º turno Flávio Lula"): Datafolha, Quaest, AtlasIntel, PoderData, Vox Brasil, Ipespe, DataTrends, Paraná Pesquisas, Nexus, Real Time Big Data, CNT/MDA, Futura, Ipsos-Ipec, Direct Pesquisas, Seta, Gerp, Indexa/Broadcast, Palver, Veritá, Meio/Ideia, Genial/Quaest, Atlas, e qualquer outro instituto que aparecer nos agregadores.
                c) Por veículo (WebSearch "pesquisa 2º turno Flávio Lula <veículo>"): CNN Brasil, g1, O Globo, UOL, Folha de S.Paulo, Estadão, Broadcast, Jovem Pan, Poder360, O Antagonista, Gazeta do Povo, Metrópoles, Exame, CartaCapital, Times Brasil, InfoMoney, Valor.
+               d) Pela agenda: para cada linha de agenda.csv com data prevista igual ou anterior a hoje, busque o resultado com WebSearch "<instituto> <registro TSE>" (quando houver registro) e "<instituto> 2º turno Flávio Lula votos válidos". Se a pesquisa já foi divulgada, ela entra em pesquisas.csv nesta execução, nunca fica na agenda.
                Confirme cada pesquisa abrindo ao menos uma reportagem (WebFetch). Obrigatórios: instituto, registro TSE (BR-xxxxx/2026), período de campo e os percentuais. Amostra, margem e modo entram quando divulgados; se faltarem, deixe o campo vazio e registre mesmo assim. Pesquisas estaduais ficam fora. Não duplique uma rodada já presente: a mesma rodada é a do mesmo registro TSE ou, sem registro, a do mesmo instituto e mesmo período de campo. Uma rodada nova de um instituto já presente (registro diferente) entra como linha nova.
                Se a única fonte for o Poder360 com votos válidos recalculados por ele, registre esses números nas colunas de válidos, deixe os totais vazios e use a URL do Poder360 como fonte.
 
             3. pesquisas.csv é histórico: cada pesquisa nova confirmada é ACRESCENTADA como nova linha no fim; nunca apague nem altere linhas existentes. Cabeçalho: instituto,divulgacao(AAAA-MM-DD),campo("DD a DD/MM"),amostra,margem_erro,modo,registro_tse,flavio_total,lula_total,branco_nulo,indecisos,flavio_validos,lula_validos,fonte(URL). Use exatamente os nomes de instituto já usados no arquivo (ex.: "AtlasIntel/Bloomberg", "PoderData/Aya", "Nexus/BTG"). Campo vazio quando o dado não foi divulgado. Preencha flavio_validos e lula_validos sempre que o instituto ou a reportagem divulgar votos válidos, mesmo quando também houver totais; o site só calcula os válidos quando esses campos estão vazios. Números com ponto decimal. Coloque entre aspas qualquer campo que contenha vírgula.
 
-            4. agenda.csv (instituto,divulgacao_prevista,registro_tse,amostra,situacao): remova a linha de uma pesquisa que acabou de entrar no histórico e as linhas com data prevista anterior a hoje cujo resultado não saiu; acrescente as pesquisas nacionais previstas que aparecem na matéria de calendário do item 2a e nos registros do TSE, com a data prevista. Registro e amostra ficam vazios quando a matéria não informa; situacao = "Prevista (fonte: <veículo>)".
+            4. agenda.csv (instituto,divulgacao_prevista,registro_tse,amostra,situacao): antes de manter ou acrescentar na agenda uma pesquisa com data prevista igual ou anterior a hoje, confirme pela busca do item 2d que o resultado ainda não saiu; se já saiu, registre em pesquisas.csv em vez de mantê-la na agenda. Remova a linha de uma pesquisa que acabou de entrar no histórico e as linhas com data prevista anterior a hoje cujo resultado não saiu; acrescente as pesquisas nacionais previstas que aparecem na matéria de calendário do item 2a e nos registros do TSE, com a data prevista. Registro e amostra ficam vazios quando a matéria não informa; situacao = "Prevista (fonte: <veículo>)".
 
             5. datafolha.csv (bloco,grupo,rodada,opcao,pct,fonte) guarda o detalhe de cada rodada do Datafolha de 2º turno. rodada = data de divulgação AAAA-MM-DD. Sempre que houver rodada nova do Datafolha (ou números de uma rodada já registrada que ainda faltem), pesquise reportagens com os recortes e ACRESCENTE linhas, sem apagar as existentes:
                - bloco "estimulada", grupo "Total": opções "Flávio Bolsonaro", "Lula", "Branco, nulo ou nenhum", "Não sabe".
@@ -87,3 +88,4 @@ jobs:
           git add pesquisas.csv agenda.csv datafolha.csv meta.json
           git commit -m "Atualização das pesquisas $(TZ=America/Sao_Paulo date '+%d/%m %H:%M')" || exit 0
           git push
+ 
