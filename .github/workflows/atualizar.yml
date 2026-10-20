@@ -46,7 +46,7 @@ jobs:
             --allowedTools WebSearch,WebFetch,Read,Edit,Write,Glob,Grep,Bash(python3:*),Bash(cat:*),Bash(date:*)
           prompt: |
             Você mantém os dados do site "Radar 2º Turno 2026" (repositório ${{ github.repository }}). Hoje é ${{ steps.data.outputs.hoje }} (America/Sao_Paulo).
-            Trabalhe só nos arquivos pesquisas.csv, agenda.csv e datafolha.csv, na raiz do repositório. Não altere nenhum outro arquivo. Não faça commit: o próximo passo do workflow faz.
+            Trabalhe só nos arquivos pesquisas.csv, agenda.csv, datafolha.csv e iris.csv, na raiz do repositório. Não altere nenhum outro arquivo. Não faça commit: o próximo passo do workflow faz.
             Não invente números: só registre o que estiver em fonte pública verificável.
 
             1. Leia pesquisas.csv e agenda.csv.
@@ -70,6 +70,8 @@ jobs:
                - recortes por grupo, sempre com as duas opções "Flávio Bolsonaro" e "Lula", em votos totais: bloco "sexo" (grupos "Mulheres", "Homens"), "idade" ("16 a 24 anos", "25 a 34 anos", "35 a 44 anos", "45 a 59 anos", "60 anos ou mais"), "escolaridade" ("Ensino fundamental", "Ensino médio", "Ensino superior"), "renda" ("Até 2 salários mínimos", "2 a 5 salários mínimos", "5 a 10 salários mínimos", "Mais de 10 salários mínimos"), "regiao" ("Sudeste", "Sul", "Nordeste", "Norte/Centro-Oeste"), "religiao" ("Católicos", "Evangélicos", "Sem religião"), "cor" ("Brancos", "Pardos", "Pretos").
                Use exatamente esses nomes de grupo para que as rodadas se comparem. Só registre grupo cujo número esteja escrito na reportagem; se duas fontes divergirem, prefira a que traz o recorte completo. Pct inteiro ou com ponto decimal. fonte = URL da reportagem.
 
+            5b. iris.csv (atualizacao,flavio_prob,lula_prob,flavio_validos,lula_validos,flavio_min,flavio_max,lula_min,lula_max,fonte) guarda o modelo ÍRIS da Voga. Abra com WebFetch https://voga-iris.com/ e leia, para o 2º turno: a data "Atualizado <dia>", a probabilidade de vitória de cada candidato no Pêndulo e a projeção de votos válidos para 25/10 com a faixa provável de cada um. Confira qual número é de qual candidato (em 19/10 era Lula 54% e Flávio 46%; projeção Lula 50,3% de 42,5% a 58,8%, Flávio 49,7% de 41,2% a 57,5%). Se a data de atualização for nova, ACRESCENTE uma linha (atualizacao AAAA-MM-DD, números com ponto decimal, fonte https://voga-iris.com/); se for a mesma da última linha, não altere. Nunca apague linhas.
+
             6. Se nada novo foi encontrado, não altere nenhum arquivo. No fim, escreva um resumo de três linhas do que mudou, com os links usados.
 
       - name: Publicar
@@ -77,7 +79,7 @@ jobs:
         run: |
           python3 - <<'EOF'
           import csv, sys
-          for f in ["pesquisas.csv", "agenda.csv", "datafolha.csv"]:
+          for f in ["pesquisas.csv", "agenda.csv", "datafolha.csv", "iris.csv"]:
               rows = list(csv.reader(open(f, encoding="utf-8")))
               n = len(rows[0])
               bad = [i + 1 for i, r in enumerate(rows) if r and len(r) != n]
@@ -87,7 +89,7 @@ jobs:
           printf '{"atualizado":"%s"}\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > meta.json
           git config user.name "radar-bot"
           git config user.email "radar-bot@users.noreply.github.com"
-          git add pesquisas.csv agenda.csv datafolha.csv meta.json
+          git add pesquisas.csv agenda.csv datafolha.csv iris.csv meta.json
           git commit -m "Atualização das pesquisas $(TZ=America/Sao_Paulo date '+%d/%m %H:%M')" || exit 0
           git pull --rebase origin main
           git push
