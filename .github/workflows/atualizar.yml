@@ -2,10 +2,12 @@ name: Atualizar pesquisas
 
 on:
   schedule:
-    # 07h45, 14h45 e 20h45 em Brasília (UTC-3)
+    # 07h45, 14h45, 20h45 e 22h30 em Brasília (UTC-3)
+    # A rodada das 22h30 pega divulgações da noite (Datafolha, Quaest, AtlasIntel).
     - cron: "45 10 * * *"
     - cron: "45 17 * * *"
     - cron: "45 23 * * *"
+    - cron: "30 1 * * *"
   workflow_dispatch:
 
 permissions:
@@ -51,11 +53,13 @@ jobs:
 
             1. Leia pesquisas.csv e agenda.csv.
 
-            2. Pesquise na web por pesquisas NACIONAIS de 2º turno presidencial Lula x Flávio Bolsonaro divulgadas nos últimos 7 dias. Não use a última data do CSV como corte: uma rodada perdida numa execução anterior precisa ser recuperada na seguinte. Faça as três frentes abaixo, sempre.
+            2. Pesquise na web por pesquisas NACIONAIS de 2º turno presidencial Lula x Flávio Bolsonaro divulgadas nos últimos 7 dias. Não use a última data do CSV como corte: uma rodada perdida numa execução anterior precisa ser recuperada na seguinte. Faça todas as frentes abaixo, sempre.
                a) Agregadores, primeiro. Abra com WebFetch a matéria mais recente do Poder360 que resume as pesquisas do 2º turno (busque "Poder360 como estão Lula e Flávio nas pesquisas") e a mais recente de calendário ("quando saem as próximas pesquisas Lula Flávio", Times Brasil ou similar). Use as duas como lista de conferência: toda rodada citada ali precisa estar no CSV.
                b) Por instituto (WebSearch "<instituto> 2º turno Flávio Lula"): Datafolha, Quaest, AtlasIntel, PoderData, Vox Brasil, Ipespe, DataTrends, Paraná Pesquisas, Nexus, Real Time Big Data, CNT/MDA, Futura, Ipsos-Ipec, Direct Pesquisas, Seta, Gerp, Indexa/Broadcast, Palver, Veritá, Meio/Ideia, Genial/Quaest, Atlas, e qualquer outro instituto que aparecer nos agregadores.
                c) Por veículo (WebSearch "pesquisa 2º turno Flávio Lula <veículo>"): CNN Brasil, g1, O Globo, UOL, Folha de S.Paulo, Estadão, Broadcast, Jovem Pan, Poder360, O Antagonista, Gazeta do Povo, Metrópoles, Exame, CartaCapital, Times Brasil, InfoMoney, Valor.
                d) Pela agenda: para cada linha de agenda.csv com data prevista igual ou anterior a hoje, busque o resultado com WebSearch "<instituto> <registro TSE>" (quando houver registro) e "<instituto> 2º turno Flávio Lula votos válidos". Se a pesquisa já foi divulgada, ela entra em pesquisas.csv nesta execução, nunca fica na agenda.
+               e) Páginas dos veículos, direto (WebFetch, sem depender da busca, que demora a indexar matérias do mesmo dia): https://datafolha.folha.uol.com.br/ , https://www1.folha.uol.com.br/poder/ , https://g1.globo.com/politica/eleicoes/ , https://noticias.uol.com.br/eleicoes/ , https://www.cnnbrasil.com.br/eleicoes/ e https://www.poder360.com.br/poder-eleicoes-2026/ . Procure nelas manchetes de pesquisa nacional de 2º turno Lula x Flávio publicadas hoje ou ontem e abra cada matéria encontrada. Se uma página não carregar, siga para a próxima sem repetir a tentativa.
+               f) Para cada instituto com divulgação prevista para hoje em agenda.csv, faça também WebSearch "<instituto> Flávio Lula votos válidos <dia> de <mês>" com a data de hoje por extenso (ex.: "Datafolha Flávio Lula votos válidos 22 de outubro").
                Confirme cada pesquisa abrindo ao menos uma reportagem (WebFetch). Obrigatórios: instituto, registro TSE (BR-xxxxx/2026), período de campo e os percentuais. Amostra, margem e modo entram quando divulgados; se faltarem, deixe o campo vazio e registre mesmo assim. Pesquisas estaduais ficam fora. Não duplique uma rodada já presente: a mesma rodada é a do mesmo registro TSE ou, sem registro, a do mesmo instituto e mesmo período de campo. Uma rodada nova de um instituto já presente (registro diferente) entra como linha nova.
                Se a única fonte for o Poder360 com votos válidos recalculados por ele, registre esses números nas colunas de válidos, deixe os totais vazios e use a URL do Poder360 como fonte.
 
@@ -102,4 +106,3 @@ jobs:
           git commit -m "Atualização das pesquisas $(TZ=America/Sao_Paulo date '+%d/%m %H:%M')" || exit 0
           git pull --rebase origin main
           git push
-
